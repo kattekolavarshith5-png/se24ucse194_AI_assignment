@@ -1,147 +1,162 @@
-Here is a **clean `README.md` / GitHub documentation section** you can directly paste into your repository. It uses **Markdown formatting**, which is standard for GitHub.
+# Artificial Intelligence Lab Assignment
+
+## Turing Test and CAPTCHA Architecture
 
 ---
 
-```markdown
-# AI Lab Assignment
+# 1. Turing Test
 
-## 1. Turing Test and CAPTCHA Architecture
+The **Turing Test** was proposed by **Alan Turing** to determine whether a machine can exhibit intelligent behavior similar to that of a human.  
 
-## Turing Test
-
-The Turing Test was proposed by **Alan Turing** to determine whether a machine can exhibit intelligent behavior equivalent to that of a human. In this test, a human judge communicates with both a human and a machine through a computer interface. If the judge cannot reliably distinguish the machine from the human, the machine is said to pass the Turing Test.
-
-### Architecture
-
-```
-
-Human Judge
-│
-▼
-Chat Interface
-│
-├───────────────┬───────────────
-│               │
-▼               ▼
-Human User      AI System (Chatbot)
-│               │
-└──────Responses Sent to Judge──────┘
-│
-▼
-Evaluation Module
-│
-▼
-Pass / Fail Decision
-
-```
-
-### Components
-
-**1. Judge Interface**
-- Interface through which the judge interacts with participants.
-- Usually implemented as a chat system.
-
-**2. Communication System**
-- Sends the judge's questions to both the human participant and the AI system.
-- Keeps identities hidden.
-
-**3. AI Response Generator**
-- Uses Natural Language Processing (NLP) techniques to generate responses.
-
-**4. Human Participant**
-- Provides real human responses for comparison.
-
-**5. Evaluation Module**
-- The judge decides which participant is human.
-
-**6. Decision Module**
-- If the judge cannot correctly identify the machine, the AI passes the test.
+In this test, a **human judge communicates with both a human and a machine through a computer interface**. If the judge **cannot reliably distinguish the machine from the human**, the machine is said to **pass the Turing Test**.
 
 ---
 
-## CAPTCHA
+## Turing Test Architecture
+            +----------------------+
+            |      Human Judge     |
+            +----------+-----------+
+                       |
+                  Chat Interface
+                       |
+        ----------------------------------
+        |                                |
++-------v--------+              +--------v--------+
+|   Human User   |              |    AI System    |
+|  (Participant) |              |    (Chatbot)    |
++----------------+              +-----------------+
+        |                                |
+        ----------- Responses -------------
+                       |
+                Evaluation Module
+                       |
+                   Pass / Fail
+                   
+---
 
-CAPTCHA stands for **Completely Automated Public Turing test to tell Computers and Humans Apart**.  
-It is widely used in websites to distinguish between human users and automated bots.
+## Components of Turing Test
 
-### Architecture
+### 1. Judge Interface
+- Interface where the judge interacts with the participants.
+- Usually implemented as a chat window.
 
-```
+### 2. Communication Module
+- Transfers questions from the judge to both the human and the AI system.
+- Ensures anonymity so the judge cannot identify who is responding.
 
-User Request (Login / Form Submission)
-│
-▼
-CAPTCHA Generator
-│
-▼
-Random Character Generation
-│
-▼
-Distortion Module (Noise, Rotation, Lines)
-│
-▼
-CAPTCHA Image Displayed to User
-│
-▼
-User Input
-│
-▼
-Verification Module
-│
-▼
-Access Granted / Access Denied
+### 3. Human Participant
+- A real human who responds to the judge’s questions.
 
-```
+### 4. AI Response Generator
+- A chatbot or AI system that generates responses using Natural Language Processing (NLP).
 
-### Components
+### 5. Dialogue Manager
+- Manages the conversation between the judge and the participants.
 
-**1. CAPTCHA Generator**
+### 6. Evaluation Module
+- The judge analyzes responses and attempts to determine which participant is the machine.
+
+### 7. Decision System
+- If the judge cannot correctly identify the machine, the AI is said to have **passed the Turing Test**.
+
+---
+
+# 2. CAPTCHA
+
+**CAPTCHA (Completely Automated Public Turing Test to Tell Computers and Humans Apart)** is a security mechanism used to differentiate between **human users and automated bots**.
+
+CAPTCHAs are widely used on websites to **prevent spam, automated logins, and bot attacks**.
+
+---
+
+## CAPTCHA Architecture
+          User Request (Login / Form)
+                    |
+                    v
+            +-------------------+
+            | CAPTCHA Generator |
+            +---------+---------+
+                      |
+               Random Text Creation
+                      |
+            +---------v----------+
+            | Distortion Engine  |
+            | (Noise, Rotation,  |
+            |  Background Lines) |
+            +---------+----------+
+                      |
+                CAPTCHA Image
+                      |
+                      v
+                   +------+
+                   | User |
+                   +------+
+                      |
+                  User Input
+                      |
+                      v
+            +-------------------+
+            | CAPTCHA Verifier  |
+            +-------------------+
+                      |
+           Access Granted / Denied
+           
+---
+
+## Components of CAPTCHA System
+
+### 1. CAPTCHA Generator
 - Generates random characters or numbers.
 
 Example:
-```
 
-X7K2P
+---
 
-```
+### 2. Distortion Engine
+The text is distorted so that bots cannot easily recognize it.  
+Common techniques include:
 
-**2. Distortion Engine**
-- Applies visual distortions to prevent bots from reading the text.
-- Techniques include:
-  - Noise addition
-  - Character rotation
-  - Background patterns
-  - Random lines
+- Noise addition
+- Character rotation
+- Background patterns
+- Random lines or curves
 
-**3. Display Interface**
+---
+
+### 3. Display Interface
 - Shows the CAPTCHA image to the user.
 
-**4. Input Module**
-- Allows the user to enter the text shown in the CAPTCHA.
+---
 
-**5. Verification Module**
-- Compares user input with the generated CAPTCHA.
-- If they match → access granted.
-- Otherwise → access denied.
+### 4. Input Module
+- Allows the user to enter the characters they see in the CAPTCHA.
 
 ---
 
-## Difference Between Turing Test and CAPTCHA
+### 5. Verification Module
+- Compares the user input with the generated CAPTCHA.
+
+**If correct:** Access granted  
+**If incorrect:** Access denied
+
+---
+
+# Difference Between Turing Test and CAPTCHA
 
 | Feature | Turing Test | CAPTCHA |
-|------|------|------|
-| Purpose | Evaluate machine intelligence | Distinguish human users from bots |
-| Interaction Type | Conversation | Visual challenge |
+|--------|-------------|---------|
+| Purpose | Evaluate machine intelligence | Distinguish humans from bots |
+| Interaction Type | Conversational | Visual puzzle |
 | Complexity | High | Simple |
-| Usage | AI evaluation | Website security |
+| Application | Artificial Intelligence evaluation | Website security |
 
 ---
 
-## Conclusion
+# Conclusion
 
-Both the Turing Test and CAPTCHA are designed to distinguish human behavior from machine behavior.  
-The Turing Test evaluates the intelligence of machines through conversational interaction, while CAPTCHA systems protect web applications from automated bots using visual challenges.
-```
+Both the **Turing Test** and **CAPTCHA** are designed to distinguish human behavior from machine behavior.  
 
----
+- The **Turing Test** evaluates whether a machine can imitate human intelligence through conversation.  
+- **CAPTCHA systems** are practical tools used in web applications to prevent automated bots from accessing services.
 
+Both concepts play an important role in the fields of **Artificial Intelligence and cybersecurity**.
